@@ -1,0 +1,5 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Multi-Cloud Backup</title><link rel="stylesheet" href="{{ url_for('static',filename='style.css') }}"></head>
+<body><nav><a class="brand" href="/">☁ Multi-Cloud Backup</a>{% if session.get('username') %}<span>{{session.username}} · {{session.role}}</span><a href="/logout">Logout</a>{% endif %}</nav>
+<main>{% with messages=get_flashed_messages(with_categories=true) %}{% for category,message in messages %}<div class="flash {{category}}">{{message}}</div>{% endfor %}{% endwith %}{% block content %}{% endblock %}</main>
+<footer>Multi-Cloud File Backup System · Local simulation mode</footer></body></html>
